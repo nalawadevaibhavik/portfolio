@@ -25,7 +25,6 @@ export default function Portfolio() {
   const [from, setFrom] = useState("2019-01-01");
   const [to, setTo] = useState("2024-04-24");
 
-  // Dummy normalized values for equity curve
   const labels = [
     "2019", "2020", "2021", "2022", "2023", "2024"
   ];
@@ -73,12 +72,10 @@ export default function Portfolio() {
 
   return (
     <div className="px-10 py-10 bg-white min-h-screen">
-      {/* Title */}
       <h1 className="text-2xl font-semibold text-gray-900 mb-8">
         Trailing Returns
       </h1>
 
-      {/* Trailing Returns TABLE */}
       <div className="overflow-x-auto mb-12">
         <table className="w-full text-sm text-left border-collapse">
           <thead>
@@ -132,7 +129,6 @@ export default function Portfolio() {
         </table>
       </div>
 
-      {/* Date Filters */}
       <div className="flex items-center gap-6 mb-4">
         <div>
           <label className="text-gray-600 text-sm block mb-1">From date</label>
@@ -155,18 +151,15 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* Equity Curve Title */}
       <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-10">
         Equity curve
       </h2>
       <p className="text-green-600 text-sm mb-6">Live since 2019-01-01</p>
 
-      {/* Equity Line Chart */}
       <div className="bg-white">
         <Line data={equityData} options={{ responsive: true, maintainAspectRatio: false }} height={250} />
       </div>
 
-      {/* Drawdown Chart */}
       <div className="mt-12">
         <Line data={drawdownData} options={{ responsive: true, maintainAspectRatio: false }} height={200} />
       </div>
